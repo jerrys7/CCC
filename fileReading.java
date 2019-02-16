@@ -44,22 +44,27 @@ public class fileReading {
         num.remove(0); //take inputs of everything, distribute however
     }
     
-    public static void 2nLines() throws IOException{
+    public static void n2Lines() throws IOException{
         BufferedReader f = new BufferedReader(new InputStreamReader(System.in)); 
-        ArrayList<Integer> num = new ArrayList();
-        
+
         StringTokenizer st;
         String s;
         s = f.readLine();
-        
-        while (s!=null && s.length() > 0){
+        ArrayList <Integer> arrayList1 = new ArrayList();
+        ArrayList <Integer> arrayList2 = new ArrayList(); 
+        ArrayList <Integer> arrayList3 = new ArrayList();
+        while ( s!=null && s.length() > 0){
             st = new StringTokenizer(s);
-            num.add(Integer.parseInt((st.nextToken())));
-            while(st.hasMoreTokens()){
-                num.add(Integer.parseInt(st.nextToken()));
+                arrayList1.add(Integer.parseInt(st.nextToken()));
+            if(st.hasMoreTokens()){
+                arrayList2.add(Integer.parseInt(st.nextToken()));
             }
+            if (st.hasMoreTokens()){
+                arrayList3.add(Integer.parseInt(st.nextToken())); 
+            }          
+
             s = f.readLine();
-        } 
+        };
     }
     
 }
